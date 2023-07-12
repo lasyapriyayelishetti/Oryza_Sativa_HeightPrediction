@@ -1,0 +1,108 @@
+{% extends 'base1.html' %}
+
+{% block styles %}
+<link rel="stylesheet"  href="../static/style.css">
+    
+<style>
+    .container-lg-9 {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.box-container {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+h1 {
+    text-align:center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p{
+   
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.btn-light {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        .btn-light:hover {
+            background-color: #ddd;
+        }
+
+        .btn {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+
+            
+        }
+
+        .btn:hover {
+            background-color: #ddd;
+        }
+        .two-btns{
+            justify-content: center;
+        }
+
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="box-container">
+    <h1>Predict Height</h1>
+    <p>Steps:</p>
+        <ol>
+        <li>Enter a 9-lettered allele sequence.</li>
+        <li>Click the "Predict Height" button.</li>
+        <li>We'll analyze the sequence and predict the plant height.</li>
+        </ol>
+    <div class="prediction-content">
+            <p>Results:</p>
+        
+            {% if input_sequence and predicted_height %}
+                <p>Input Sequence: {{ input_sequence }}</p>
+                <p>Predicted Height: {{ predicted_height }}</p>
+            {% endif %}
+        </form>
+        <div class="two-btns">
+            <a class="btn-light" href="/prediction">Reset</a>
+            <a href="/history" class="btn">View History</a>
+        </div>
+        
+
+
+    </div>
+</div>
+
+
+
+{% endblock %}

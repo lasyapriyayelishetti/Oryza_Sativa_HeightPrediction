@@ -1,0 +1,115 @@
+{% extends 'base1.html' %}
+{% block styles %}
+<style>
+
+.container-lg-9 {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.box-container {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    font-size:18px;
+    margin-bottom: 10px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.input-container {
+    display: flex;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+}
+
+input[type="submit"] {
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    margin-left:4px;
+    border:none;
+}
+        .btn {
+            margin-left:35%;
+            background-color:#f1f1f1;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+           
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+
+</style>
+{% endblock %}
+{% block content %}
+
+
+<div class="container-lg-9 box-container">
+    <h1>Predict Height</h1>
+    <p>Steps:</p>
+        <ol>
+        <li>Enter a 9-letter allele sequence</li>
+        <li>Click the "Predict Height" button.</li>
+        <li>We'll analyze the sequence and predict the plant height.</li>
+        </ol>
+    <div class="prediction-content">
+
+        <form method="POST" action="/prediction">
+
+            <label for="sequence">Enter Allele Sequence:</label>
+            <div class="input-container">
+                <input type="text" id="sequence" name="sequence" required>
+                <input type = "submit" value = "Submit" onclick = "validate()" />
+            </div>
+            
+        </form>
+        <div class="history">
+            
+            <a href="/history" class="btn">View History</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+{% endblock %}

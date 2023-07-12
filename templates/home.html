@@ -1,0 +1,48 @@
+{% extends 'base1.html' %}
+
+{% block styles %}
+<style>
+.container-lg-9 {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.box-container {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+h6 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.button{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:#5555557e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-lg-9 box-container">
+    <h6>Wanna Predict Plant Height?</h6>
+    <p>Welcome to our plant height prediction tool! With our advanced algorithms and extensive plant database, we can provide accurate predictions for the height of various plant species.</p>
+    <p>Whether you're a gardener, landscaper, or simply a plant enthusiast, our prediction tool can help you plan your gardening projects, design your outdoor spaces, or gain insights into plant growth.</p>
+    <p>To get started, simply click the button below and explore the exciting world of plant height prediction!</p>
+    <a class='button' href="\prediction">Click here to start predicting!</a>
+</div>
+{% endblock %}
